@@ -1,0 +1,703 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1046{\fonttbl{\f0\fnil\fcharset0 Ebrima;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sl240\slmult1\qc\b\f0\fs40\lang22 INTRODU\'c7\'c3O \'c0 PROGRAMA\'c7\'c3O\par
+lista 5\par
+
+\pard\sl240\slmult1 Aluno: \b0\fs32 Arthur Marques Ramos Pimentel\par
+\fs22 ___________________________________________________________________________________________\par
+\b\fs32 1. Determine a quantidade de homens e mulheres (separadamente) que s\'e3o maiores de idade, baseado numa lista de 20 pessoas. Considere apenas como entrada a informa\'e7\'e3o se \'e9 homem ou mulher ('m' ou 'f') e a idade.\par
+\b0\fs22 ___________________________________________________________________________________________\fs32\par
+\fs22 #include <stdio.h>\par
+int main()\par
+\{\par
+    int vezes = 0, homem = 0, mulher = 0, idade;\par
+    char opc;\par
+\par
+    while (vezes != 5)\par
+    \{\par
+        printf("Pessoa numero %i\\n", vezes+1);\par
+        printf("Homem - (H/h)\\nMulher - (M/m)\\nSexo:");\par
+        scanf("%s", &opc);\par
+        switch (opc)\par
+        \{\par
+        case 'h':\par
+        case 'H':\par
+            printf("Digite a idade: ");\par
+            scanf("%i", &idade);\par
+            if (idade >= 18)\par
+            \{\par
+                homem++;\par
+            \}\par
+            vezes++;\par
+            break;\par
+        case 'm':\par
+        case 'M':\par
+            printf("Digite a idade: ");\par
+            scanf("%i", &idade);\par
+            if (idade >= 18)\par
+            \{\par
+                mulher++;\par
+            \}\par
+            vezes++;\par
+            break;\par
+        default:\par
+            printf("Digite opcao valida\\n\\n\\n");\par
+            system("pause");\par
+            break;\par
+        \}\par
+        system("cls");\par
+    \}\par
+    printf("Pessoas maiores de idade.");\par
+    printf("Mulheres:%i\\n", mulher);\par
+    printf("Homem:%i\\n", homem);\par
+    return 0;\par
+\}\par
+\b\fs32 2. Leia uma quantidade n\'e3o determinada de n\'fameros positivos. Calcule a quantidade de n\'fameros pares e \'edmpares, a m\'e9dia geral dos n\'fameros lidos. O n\'famero que encerrar\'e1 a leitura ser\'e1 o n\'famero zero.\par
+\b0\fs22 ___________________________________________________________________________________________\par
+#include <stdio.h>\par
+int main()\par
+\{\par
+    int numero, pares = 0, impares = 0, mediageral, vezes = 0, somageral = 0;\par
+    while (numero != 0)\par
+    \{\par
+        printf("Digite um numero: ");\par
+        scanf("%d", &numero);\par
+        somageral = somageral + numero;\par
+        if (numero == 0)\par
+        \{\par
+            printf("Progama encerrado.\\n");\par
+        \}\par
+        else if (numero % 2 == 0)\par
+        \{\par
+            pares++;\par
+            vezes++;\par
+        \}\par
+        else\par
+        \{\par
+            impares++;\par
+            vezes++;\par
+        \}\par
+    \}\par
+    mediageral = somageral / vezes;\par
+    printf("Quantidade de numeros impares: %d\\n", impares);\par
+    printf("Quantidade de numeros pares: %d\\n", pares);\par
+    printf("Media: %d", mediageral);\par
+    return 0;\par
+\}\fs32\par
+\b 3. Exiba todas as datas de um calend\'e1rio que est\'e3o entre duas datas informadas pelo usu\'e1rio (dia, m\'eas e ano). Suponha que as duas datas informadas sejam v\'e1lidas.\par
+\b0\fs22 ___________________________________________________________________________________________\par
+#include <stdio.h>\par
+int main()\par
+\{\par
+    int diainicial, mesinicial, anoinicial,diafinal, mesfinal, anofinal;\par
+    printf("Infome a data inicial.\\n");\par
+    scanf("%d/%d/%d", &diainicial, &mesinicial, &anoinicial);\par
+    printf("Infome a data final.\\n");\par
+    scanf("%d/%d/%d", &diafinal, &mesfinal, &anofinal);\par
+    while (diainicial != diafinal || mesinicial != mesfinal || anoinicial != anofinal)\par
+    \{\par
+        printf("\\n\\t%d/%d/%d\\n",diainicial,mesinicial,anoinicial);\par
+        if (mesinicial == 1 || mesinicial == 3 || mesinicial == 5 || mesinicial == 7 || mesinicial == 8 || mesinicial == 10 || mesinicial == 12)\par
+        \{\par
+            if (mesinicial == 12 && diainicial == 31)\par
+            \{\par
+                anoinicial++;\par
+                mesinicial = 1;\par
+                diainicial = 1;\par
+            \}\par
+            else if (diainicial == 31)\par
+            \{\par
+                mesinicial++;\par
+                diainicial = 1;\par
+            \}\par
+            else\par
+            \{\par
+                diainicial++;\par
+            \}\par
+        \}\par
+        else if (mesinicial == 4 || mesinicial == 6 || mesinicial == 9 || mesinicial == 11)\par
+        \{\par
+            if (diainicial == 30)\par
+            \{\par
+                mesinicial++;\par
+                diainicial = 1;\par
+            \}else\par
+            \{\par
+                diainicial++;\par
+            \}\par
+        \}\par
+        else if (mesinicial == 2 && anoinicial % 4 != 0)\par
+        \{\par
+            if (diainicial == 28)\par
+            \{\par
+                mesinicial++;\par
+                diainicial = 1;\par
+            \}\par
+            else\par
+            \{\par
+                diainicial++;\par
+            \}\par
+        \}\par
+        else if (mesinicial == 2 && anoinicial % 4 == 0)\par
+        \{\par
+            if (diainicial == 29)\par
+            \{\par
+                mesinicial++;\par
+                diainicial = 1;\par
+            \}\par
+            else\par
+            \{\par
+                diainicial++;\par
+            \}\par
+        \}\par
+    \}\par
+    printf("\\n\\t%d/%d/%d\\n", diainicial, mesinicial, anoinicial);\par
+    return 0;\par
+\}\par
+\b\fs32 4. Leia uma data e uma quantidade de dias, em seguida exiba esta data somada pela quantidade de dias fornecida. Exemplo: 29/04/2007 + 3 = 02/05/2007.\par
+\b0\fs22 ___________________________________________________________________________________________\par
+#include <stdio.h>\par
+int main()\par
+\{\par
+    int diainicial, mesinicial, anoinicial,cont = 0,dias;\par
+    printf("Infome a data inicial.\\n");\par
+    scanf("%d/%d/%d", &diainicial, &mesinicial, &anoinicial);\par
+    printf("Me fale o numero de dias.\\n");\par
+    scanf("%d", &dias);\par
+    while (dias != cont)\par
+    \{\par
+        if (mesinicial == 1 || mesinicial == 3 || mesinicial == 5 || mesinicial == 7 || mesinicial == 8 || mesinicial == 10 || mesinicial == 12)\par
+        \{\par
+            if (mesinicial == 12 && diainicial == 31)\par
+            \{\par
+                anoinicial++;\par
+                mesinicial = 1;\par
+                diainicial = 1;\par
+            \}\par
+            else if (diainicial == 31)\par
+            \{\par
+                mesinicial++;\par
+                diainicial = 1;\par
+            \}\par
+            else\par
+            \{\par
+                diainicial++;\par
+            \}\par
+        \}\par
+        else if (mesinicial == 4 || mesinicial == 6 || mesinicial == 9 || mesinicial == 11)\par
+        \{\par
+            if (diainicial == 30)\par
+            \{\par
+                mesinicial++;\par
+                diainicial = 1;\par
+            \}else\par
+            \{\par
+                diainicial++;\par
+            \}\par
+        \}\par
+        else if (mesinicial == 2 && anoinicial % 4 != 0)\par
+        \{\par
+            if (diainicial == 28)\par
+            \{\par
+                mesinicial++;\par
+                diainicial = 1;\par
+            \}\par
+            else\par
+            \{\par
+                diainicial++;\par
+            \}\par
+        \}\par
+        else if (mesinicial == 2 && anoinicial % 4 == 0)\par
+        \{\par
+            if (diainicial == 29)\par
+            \{\par
+                mesinicial++;\par
+                diainicial = 1;\par
+            \}\par
+            else\par
+            \{\par
+                diainicial++;\par
+            \}\par
+        \}\par
+        cont++;\par
+    \}\par
+    printf("%d/%d/%d\\n", diainicial, mesinicial, anoinicial);\par
+    return 0;\par
+\}\par
+\b\fs32 5. Fa\'e7a um programa que leia dois n\'fameros inteiros, o primeiro \'e9 o valor inicial de um contador, e o segundo \'e9 o valor final do contador (o valor inicial fornecido \'e9 inferior ao valor final). Usando o comando WHILE, escreva na tela uma contagem que comece no primeiro n\'famero lido, escreva os n\'fameros seguintes colocando apenas um n\'famero em cada nova linha da tela, at\'e9 chegar ao valor final indicado.\par
+Exemplo de tela de sa\'edda:\par
+Entre com o n\'famero inicial da contagem: 5\par
+Entre com o n\'famero final da contagem: 9\par
+5\par
+6\par
+7\par
+8\par
+9\par
+\b0\fs22 ___________________________________________________________________________________________\par
+#include <stdio.h>\par
+int main()\par
+\{\par
+    int a, b, cont;\par
+    printf("Digite um valor inicial.");\par
+    scanf("%i", &a);\par
+    printf("Digite um valor final.");\par
+    scanf("%i", &b);\par
+    cont=a;\par
+    while (b >= cont)\par
+    \{\par
+        printf("%i\\n",cont);\par
+        cont++;\par
+    \}\par
+    return 0;\par
+\}\par
+\b\fs32 6. Fazer um programa que calcule e imprima o fatorial de um n\'famero fornecido pelo usu\'e1rio, usando o comando WHILE. Repetir a execu\'e7\'e3o do programa tantas at\'e9 o usu\'e1rio responder nao. O fatorial de um n\'famero inteiro positivo \'e9 definido como o n\'famero multiplicado por ele menos 1, menos 2, etc at\'e9 o valor 1. Por exemplo, o fatorial de 4 \'e9 4x3x2x1=24.\par
+Exemplo de tela de sa\'edda:\par
+ Entre com um numero: 5\par
+ O fatorial de 5 \'e9 120\par
+ Outro n\'famero (sim/n\'e3o) ? n\'e3o\par
+\b0\fs22 ___________________________________________________________________________________________\par
+#include <stdio.h>\par
+int main()\par
+\{\par
+    float fat, n, opc = 1;\par
+    while (opc == 1)\par
+    \{\par
+        printf("Insira um valor para calcular o fatorial: ");\par
+        scanf("%f", &n);\par
+        fat = 1;\par
+        while (n > 1)\par
+        \{\par
+            fat = fat * n;\par
+            n = n - 1;\par
+        \}\par
+        printf("\\nFatorial: %.0f\\n", fat);\par
+        opc = 0;\par
+        printf("Deseja continuar?\\n1-SIM\\n2-NAO\\n");\par
+        scanf("%f",&opc);\par
+        if (opc == 0)\par
+        \{\par
+            printf("Progama encerrado.");\par
+            system("pause");\par
+        \}else\{\par
+            fat = 1;\par
+        \}\par
+        system("cls");\par
+    \}\par
+    return 0;\par
+\}\par
+\b\fs32 7. Ler o nome de um aluno e suas duas notas A e B, e ap\'f3s calcular a m\'e9dia ponderada entre estas notas (A tem peso 1 e B tem peso 2). Repetir este procedimento para uma turma composta por tr\'eas alunos, usando o comando WHILE.\par
+Exemplo de tela de sa\'edda:\par
+ \fs28 Entre com o nome do aluno: Joao da Silva\par
+ Entre com a nota A: 5.0\par
+ Entre com a nota B: 6.0\par
+ O aluno Jo\'e3o da Silva tem uma m\'e9dia: 5.66\par
+\b0\fs22 ___________________________________________________________________________________________\par
+#include <stdio.h>\par
+int main()\par
+\{\par
+    char nome[10];\par
+    int control = 1;\par
+    float nota1, nota2, media;\par
+    while (control <= 3)\par
+    \{\par
+        printf("Digite o nome do aluno.\\n");\par
+        scanf("%s", &nome);\par
+        printf("Digite a primeira nota.\\n");\par
+        scanf("%f", &nota1);\par
+        printf("Digite a segunda nota.\\n");\par
+        scanf("%f", &nota2);\par
+        media = (nota1 + nota2) / 3;\par
+        printf("O aluno %s tem uma media: %.2f\\n\\n", nome, media);\par
+        control++;\par
+    \}\par
+    return 0;\par
+\}\par
+\b\fs32 8. Alterar o programa anterior de maneira que possamos trabalhar com turmas compostas por um n\'famero vari\'e1vel de alunos. Ap\'f3s calcular e imprimir a m\'e9dia de um aluno, exibir uma mensagem perguntando ao usu\'e1rio se existem mais alunos (resposta: sim / nao ). Se tiver mais alunos, continuar o procedimento de leitura das notas e o c\'e1lculo da m\'e9dia at\'e9 que o usu\'e1rio responda 'nao'. Usar o comando WHILE e gerar uma sa\'edda conforme o exemplo de tela de sa\'edda abaixo:\par
+\par
+-Entre com o nome do aluno: Joao da Silva\par
+-Entre com o grau A: 5.0\par
+-Entre com o grau B: 6.0\par
+-O aluno Joao da Silva tem uma m\'e9dia: 5.66\par
+-Continuar (sim/nao) ? n\'e3o\par
+\b0\fs22 ___________________________________________________________________________________________\par
+#include <stdio.h>\par
+int main()\par
+\{\par
+    char nome[10], opc;\par
+    int control = 1;\par
+    float nota1, nota2, media;\par
+    while (control == 1)\par
+    \{\par
+        printf("Digite o nome do aluno.\\n");\par
+        scanf("%s", &nome);\par
+        printf("Digite a primeira nota.\\n");\par
+        scanf("%f", &nota1);\par
+        printf("Digite a segunda nota.\\n");\par
+        scanf("%f", &nota2);\par
+        media = (nota1 + nota2) / 3;\par
+        printf("O aluno %s tem uma media: %.2f\\n\\n", nome, media);\par
+        printf("Deseja continuar? (s/n)\\n");\par
+        scanf("%s", &opc);\par
+        switch (opc)\par
+        \{\par
+        case 's':\par
+            break;\par
+        case 'S':\par
+            break;\par
+        case 'n':\par
+        control = 0;\par
+        printf("Progama encerrado.\\n");\par
+            break;\par
+        case 'N':\par
+        control = 0;\par
+        printf("Progama encerrado.\\n");\par
+            break;\par
+        default:\par
+            printf("Codigo errado,progama encerrado.\\n");\par
+            control = 0;\par
+            break;\par
+        \}\par
+    \}\par
+    return 0;\par
+\}\par
+\b\fs32 9. Alterar o programa anterior de maneira a validar as notas fornecidas pelo usu\'e1rio (notas devem ser valores positivos entre 0.0 e 10.0). Indicar ao usu\'e1rio se a nota\par
+fornecida \'e9 inv\'e1lida e pedir para fornecer uma nova nota, repetindo este processo at\'e9 que o usu\'e1rio informe uma nota correta. Usar um \'b4flag' (vari\'e1vel de controle booleana) dentro do la\'e7o WHILE de leitura da nota, e gerar uma sa\'edda conforme o exemplo de tela de sa\'edda abaixo.\par
+ Entre com o nome do aluno: Joao da Silva\par
+ Entre com a nota A: 15.3\par
+ ERRO: Nota invalida! Digite novamente a nota.\par
+ Entre com a nota A: 5.0\par
+ Entre com a nota B: 6.0\par
+ O aluno Jo\'e3o da Silva tem uma media: 5.66\par
+ Continuar (sim/nao) ? n\'e3o\par
+______________________________________________________________\par
+\b0\fs22 #include <stdio.h>\par
+#include <stdbool.h>\par
+int main()\par
+\{\par
+    char nome[10], opc;\par
+    bool control = true, controlnota1 = true, controlnota2 = true;\par
+    float nota1, nota2, media, nul;\par
+    while (control)\par
+    \{\par
+        printf("Digite o nome do aluno.\\n");\par
+        scanf("%s", &nome);\par
+        while (controlnota1)\par
+        \{\par
+            printf("Digite a primeira nota.\\n");\par
+            scanf("%f", &nota1);\par
+            if (nota1 < 0 || nota1 > 10)\par
+            \{\par
+                printf("DIGITE UMA NOTA VALIDA!\\n");\par
+                system("pause");\par
+            \}\par
+            else\par
+            \{\par
+                controlnota1 = false;\par
+            \}\par
+        \}\par
+        while (controlnota2)\par
+        \{\par
+            printf("Digite a segunda nota.\\n");\par
+            scanf("%f", &nota2);\par
+            if (nota1 < 0 || nota1 > 10)\par
+            \{\par
+                printf("DIGITE UMA NOTA VALIDA!\\n");\par
+                system("pause");\par
+            \}\par
+            else\par
+            \{\par
+                controlnota2 = false;\par
+            \}\par
+        \}\par
+        media = (nota1 + nota2) / 3;\par
+        printf("O aluno %s tem uma media: %.2f\\n\\n", nome, media);\par
+        printf("Deseja continuar? (s/n)\\n");\par
+        scanf("%s", &opc);\par
+        switch (opc)\par
+        \{\par
+        case 's':\par
+        case 'S':\par
+        controlnota1 = true;\par
+        controlnota2 = true;\par
+            break;\par
+        case 'n':\par
+        case 'N':\par
+            control = false;\par
+            printf("Progama encerrado.\\n");\par
+            break;\par
+        default:\par
+            printf("Codigo errado,progama encerrado.\\n");\par
+            control = 0;\par
+            break;\par
+        \}\par
+    \}\par
+    return 0;\par
+\}\par
+\b\fs32 10. Alterar o programa anterior para permitir que o usu\'e1rio responda a pergunta de 'continuar (s/n)' com uma das seguintes alternativas: 'sim', 'Sim', 'SIM', 's', 'S', ou 'nao', 'Nao', 'N\'c3O', 'n', 'N'. Caso a resposta n\'e3o seja uma destas indicar ao usu\'e1rio que a resposta dada est\'e1 incorreta e solicitar novamente para que ele responda a pergunta 'continuar (s/n)'. Repetir este processo at\'e9 que o usu\'e1rio entre com uma resposta correta. Usar um \'b4flag' (vari\'e1vel de controle booleana) dentro de um la\'e7o de controle do WHILE para monitoramento da resposta do usu\'e1rio.\par
+Exemplo de tela de sa\'edda:\par
+\par
+\fs28  Entre com o nome do aluno: Joao da Silva\par
+ Entre com a nota A: 7.6\par
+ Entre com a nota B: 15.3\par
+ ERRO: Nota inv\'e1lida! Digite novamente a nota.\par
+ Entre com a nota B: 5.5\par
+ O aluno Jo\'e3o da Silva tem uma media: 6.2\par
+ Continuar (sim/n\'e3o) ? talvez\par
+ ERRO: Resposta invalida!\par
+ Continuar (sim/nao) ? n\'e3o\par
+______________________________________________________________________\par
+\b0\fs22 #include <stdio.h>\par
+#include <stdbool.h>\par
+int main()\par
+\{\par
+    char nome[10], opc;\par
+    bool control = true, controlnota1 = true, controlnota2 = true, controlcontinuar = false;\par
+    float nota1, nota2, media, nul;\par
+    while (control)\par
+    \{\par
+        printf("Digite o nome do aluno.\\n");\par
+        scanf("%s", &nome);\par
+        while (controlnota1)\par
+        \{\par
+            printf("Digite a primeira nota.\\n");\par
+            scanf("%f", &nota1);\par
+            if (nota1 < 0 || nota1 > 10)\par
+            \{\par
+                printf("DIGITE UMA NOTA VALIDA!\\n");\par
+                system("pause");\par
+            \}\par
+            else\par
+            \{\par
+                controlnota1 = false;\par
+            \}\par
+        \}\par
+        while (controlnota2)\par
+        \{\par
+            printf("Digite a segunda nota.\\n");\par
+            scanf("%f", &nota2);\par
+            if (nota1 < 0 || nota1 > 10)\par
+            \{\par
+                printf("DIGITE UMA NOTA VALIDA!\\n");\par
+                system("pause");\par
+            \}\par
+            else\par
+            \{\par
+                controlnota2 = false;\par
+            \}\par
+        \}\par
+        media = (nota1 + nota2) / 3;\par
+        printf("O aluno %s tem uma media: %.2f\\n\\n", nome, media);\par
+        controlcontinuar = true;\par
+        while (controlcontinuar)\par
+        \{\par
+            printf("Deseja continuar? (s/n)\\n");\par
+            scanf("%s", &opc);\par
+            switch (opc)\par
+            \{\par
+            case 's':\par
+            case 'S':\par
+            case 'sim':\par
+            case 'SIM':\par
+            case 'Sim':\par
+                controlnota1 = true;\par
+                controlnota2 = true;\par
+                controlcontinuar = false;\par
+                break;\par
+            case 'n':\par
+            case 'N':\par
+            case 'nao':\par
+            case 'Nao':\par
+            case 'NAO':\par
+                control = false;\par
+                controlcontinuar = false;\par
+                printf("Progama encerrado.\\n");\par
+                break;\par
+            default:\par
+                printf("INFORME UMA OPCAO VALIDA!\\n");\par
+                controlcontinuar = true;\par
+                break;\par
+            \}\par
+        \}\par
+    \}\par
+    return 0;\par
+\}\par
+\b\fs32 11. Escrever um programa que calcule todos os n\'fameros divis\'edveis por um certo valor indicado pelo usu\'e1rio (o resto da divis\'e3o por este n\'famero deve ser igual a zero), compreendidos em um intervalo tamb\'e9m especificado pelo usu\'e1rio. O usu\'e1rio deve entrar com um primeiro valor correspondente ao divisor e ap\'f3s ele vai fornecer o valor inicial do intervalo, seguido do valor final deste intervalo.\par
+Exemplo de tela de sa\'edda:\par
+\par
+ Entre com o valor do divisor: 3\par
+ In\'edcio do intervalo: 17\par
+ Final do intervalo: 29\par
+ N\'fameros divis\'edveis por 3 no intervalo de 17 a 29:\par
+18 21 24 27\par
+______________________________________________________________\par
+\b0\fs22 #include <stdio.h>\par
+int main()\par
+\{\par
+    int comeco, fim, numero_principal, enclemento;\par
+    printf("Entre com o valor do divisor:");\par
+    scanf("%i", &numero_principal);\par
+    printf("Inicio do intervalo:");\par
+    scanf("%i", &comeco);\par
+    printf("Final do intervalo:");\par
+    scanf("%i", &fim);\par
+    enclemento = comeco;\par
+    printf("Os numeros divisiveis por %i no intervalo entre %i e %i sao:",numero_principal,comeco,fim);\par
+    while (enclemento != fim)\par
+    \{\par
+        if (enclemento % numero_principal == 0)\par
+        \{\par
+            printf("\\t%d", enclemento);\par
+        \}\par
+        enclemento++;\par
+    \}\par
+    printf(".");\par
+    return 0;\par
+\}\par
+\b\fs32 12. Fa\'e7a um programa para o \ldblquote jogo de adivinhar um n\'famero\rdblquote . O computador deve sortear um n\'famero entre 0 e 100 e pedir para o usu\'e1rio tentar adivinhar este n\'famero. O usu\'e1rio vai dizer o seu palpite, e o computador deve responder, se ele \'e9 maior ou menor que o n\'famero que ele sorteou. O programa termina somente quando o usu\'e1rio acertar exatamente qual o n\'famero que o computador tinha sorteado, escrevendo uma mensagem de felicita\'e7\'f5es para o nosso usu\'e1rio e\par
+indicando o n\'famero total de tentativas feitas.\par
+\par
+Dica: para gerar um n\'famero qualquer entre 0 e 100, use um comando como o deste exemplo indicado logo a seguir.\par
+Exemplo:\par
+#include <stdlib.h>\par
+...\par
+/* Rand: gera um n\'famero entra 0 e RAND_MAX, retorna um int */\par
+numero_sorteado = rand () % 100; // 0 <= numero_sorteado < 100\par
+\par
+Exemplo de tela de sa\'edda:\par
+Adivinhe o numero sorteado:\par
+Entre com um nro.: 35\par
+Errou! O numero eh maior que 35\par
+Entre com um nro.: 52\par
+Errou! O numero eh menor que 52\par
+Entre com um nro.: 43\par
+BRAVO, voce acertou!\par
+______________________________________________________________\par
+\b0\fs22 #include <stdio.h>\par
+#include <stdlib.h>\par
+#include <time.h>\par
+int main()\par
+\{\par
+    int num, num_sort;\par
+    srand (time(NULL));\par
+    num_sort = rand() % 100;\par
+    while (num != num_sort)\par
+    \{\par
+        printf("Adivinhe o numero sorteado entre 0 e 100.\\nNumero: ");\par
+        scanf("%i", &num);\par
+        if (num > num_sort)\par
+        \{\par
+            printf("Seu numero e maior que o numero sorteado, tente novamente.\\n");\par
+        \}\par
+        else if(num < num_sort)\par
+        \{\par
+            printf("Seu numero e menor que o numero sorteado, tente novamente.\\n");\par
+        \}\par
+        else\par
+        \{\par
+            printf("Bravo! Voce acertou!\\n");\par
+        \}\par
+    \}\par
+    return 0;\par
+\}\b\fs32\par
+13. Fa\'e7a um programa para o \ldblquote jogo de adivinhar um n\'famero\rdblquote , mas invertendo os pap\'e9is desta vez. O computador que vai tentar adivinhar um n\'famero escolhido pelo usu\'e1rio. O usu\'e1rio deve escolher um n\'famero e para cada n\'famero apresentado pelo\par
+computador, responder se ele acertou, ou se o n\'famero apresentado \'e9 maior que o escolhido, ou se ele \'e9 menor que o escolhido. O programa termina quando o usu\'e1rio responder que o computador acertou.\par
+______________________________________________________________\b0\fs22\par
+#include <stdio.h>\par
+#include <stdlib.h>\par
+#include <time.h>\par
+#include <stdbool.h>\par
+\par
+int main()\par
+\{\par
+    int numero_usuario, numero_computador, max = 10, min = 0, correcao_usuario;\par
+    srand(time(NULL));\par
+    bool questionario_numero = true, questionario_usuario = true, questionario_usuario1 = true;\par
+    while (questionario_numero)\par
+    \{\par
+        printf("Informe o numero que o computador deve adivinhar entre 0 e 10.\\nNumero:");\par
+        scanf("%i", &numero_usuario);\par
+        if (numero_usuario >= 0 && numero_usuario <= 10)\par
+        \{\par
+            questionario_numero = false;\par
+        \}\par
+        else\par
+        \{\par
+            printf("Numero fora do intervalo, Digite um numero valido.\\n");\par
+        \}\par
+        system("cls");\par
+    \}\par
+    while (questionario_usuario1)\par
+    \{\par
+        numero_computador = min + rand() % (max - min) + 1;\par
+        while (questionario_usuario)\par
+        \{\par
+            printf("Numero: %i\\nO numero escolhido e:\\n 1- Maior\\n 2- Menor\\n 3- O numero correto.\\n Alternativa:", numero_computador);\par
+            scanf("%d", &correcao_usuario);\par
+            switch (correcao_usuario)\par
+            \{\par
+            case 1:\par
+                min = numero_computador;\par
+                questionario_usuario = false;\par
+                break;\par
+            case 2:\par
+                max = numero_computador;\par
+                questionario_usuario = false;\par
+                break;\par
+            case 3:\par
+                printf("Computador acertou o numero %d, com sucesso!\\n", numero_usuario);\par
+                questionario_usuario = false;\par
+                questionario_usuario1 = false;\par
+                system("PAUSE");\par
+                break;\par
+            default:\par
+                printf("Alternativa errada.\\n");\par
+                questionario_usuario1 = false;\par
+                system("PAUSE");\par
+                break;\par
+            \}\par
+        \}\par
+        system("cls");\par
+        questionario_usuario = true;\par
+    \}\par
+    return 0;\par
+\}\par
+\b\fs32 14. Fa\'e7a um programa que obtenha e exiba na tela todos os n\'fameros primos de 1 at\'e9 150. Os n\'fameros primos s\'e3o aqueles que s\'f3 s\'e3o divis\'edveis por 1 e por eles mesmos\par
+(exemplo: 1, 3, 5, 7, ...).\par
+______________________________________________________________\par
+\b0\fs22 #include <stdio.h>\par
+#include <stdbool.h>\par
+int main(void)\par
+\{\par
+    //variaveis\par
+    bool teste = true;\par
+    int num = 0, intervalo = 1, cont = 0, cont_teste = 1;\par
+    float resto_div;\par
+    //processamento\par
+    printf("  Numeros primos entre 1 e 150\\n________________________________\\n");\par
+    while (cont_teste <= 150)\par
+    \{\par
+        num++;\par
+        while (intervalo <= num)\par
+        \{\par
+            resto_div = num % intervalo;\par
+            intervalo++;\par
+            if (resto_div == 0)\par
+            \{\par
+                cont++;\par
+            \}\par
+        \}\par
+        if (cont == 2 || cont == 1)\par
+        \{\par
+            printf("|. %d\\n", num);\par
+        \}\par
+        cont = 0;\par
+        intervalo = 1;\par
+        cont_teste++;\par
+    \}\par
+    return 0;\par
+\}\par
+.\b\fs32\par
+\par
+\b0\fs22\par
+}
+ 

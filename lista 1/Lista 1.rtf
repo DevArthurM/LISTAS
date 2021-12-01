@@ -1,0 +1,311 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1046{\fonttbl{\f0\fnil\fcharset0 Ebrima;}{\f1\fnil Ebrima;}}
+{\colortbl ;\red255\green0\blue0;\red0\green0\blue0;}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sl240\slmult1\qc\b\f0\fs40\lang22 INTRODU\'c7\'c3O \'c0 PROGRAMA\'c7\'c3O\par
+lista 1\par
+
+\pard\sl240\slmult1 Aluno: \b0\fs32 Arthur Marques Ramos Pimentel\par
+\fs22 ___________________________________________________________________________\fs32\par
+
+\pard\sl240\slmult1\qc\fs22\par
+
+\pard\sl240\slmult1\b\fs28 1. Fa\'e7a um algoritmo que receba dois n\'fameros e ao final mostre a soma, subtra\'e7\'e3o, multiplica\'e7\'e3o e a divis\'e3o dos n\'fameros lidos.\par
+\b0\fs22 ___________________________________________________________________________\par
+#include <stdio.h>\par
+\par
+int main(void) \{\par
+  int A, B;\par
+  \par
+  printf("Digite o primeiro n\'famero;\\n");\par
+  scanf("%i", &A);\par
+  printf("Digite o segundo n\'famero;\\n");\par
+  scanf("%i", &B);\par
+\par
+  printf("\\nO soma dos n\'fameros \'e9: %i\\t", A + B);\par
+  printf("\\nO divis\'e3o dos n\'fameros \'e9: %i\\t", A / B);\par
+  printf("\\nO multiplica\'e7\'e3o dos n\'fameros \'e9: %i\\t", A * B);\par
+\par
+  return 0;\par
+\}\par
+\b\par
+\fs28 2. Escreva um algoritmo para determinar o consumo m\'e9dio de um autom\'f3vel sendo fornecida a dist\'e2ncia total percorrida pelo autom\'f3vel e o total de combust\'edvel gasto.\par
+\b0\fs22 ___________________________________________________________________________\par
+#include <stdio.h>\par
+\par
+int main(void) \{\par
+int dis, com;\par
+\par
+printf("Digite a quantidade de Km percorrido.\\n");\par
+scanf("%d", &dis);\par
+printf("Digite a quantidade de Combust\'edvel usados em litros.\\n");\par
+scanf("%d", &com);\par
+\par
+printf("O gasto m\'e9dio de gasolina por KM \'e9 de %d litros", dis / com);\par
+ return 0;\par
+\}\par
+\par
+\b\fs28 3. Escrever um algoritmo que leia o nome de um vendedor, o seu sal\'e1rio fixo, e o total de vendas efetuadas por ele no m\'eas (em dinheiro). Sabendo que este vendedor ganha 15% de comiss\'e3o sobre suas vendas efetuadas, informar o seu nome, o sal\'e1rio fixo e sal\'e1rio no final do m\'eas.\par
+\b0\fs22 ___________________________________________________________________________\par
+#include <stdio.h>\par
+\par
+int main()\{\par
+\par
+char nome [15];\par
+int sal, vendas, salf;\par
+\par
+printf("Insira o nome do funcion\'e1rio.\\n");\par
+  scanf("%s", &*nome);\par
+printf("Insira o sal\'e1rio do funcion\'e1rio.\\n");\par
+  scanf("%d", &sal);\par
+printf("Insira o valor em vendas feitas pelo funcion\'e1rio\\n");\par
+  scanf("%d", &vendas);\par
+\par
+  salf = vendas * 0.15;\par
+\par
+  printf("\\n");\par
+  printf("RESULTADO\\n");\par
+  printf("\\nNome do funcion\'e1rio:\\n \\t%s", nome);\par
+  printf("\\nSal\'e1rio sem comiss\'e3o:\\n \\tR$%d ", sal);\par
+  printf("\\nSal\'e1rio final com comiss\'e3o:\\n \\tR$%d", salf + sal);\par
+\par
+return 0;\par
+\}\par
+\par
+\b\fs28 4. Escrever um algoritmo que leia o nome de um aluno e as notas das tr\'eas provas que ele obteve no semestre. No final informar o nome do aluno e a sua m\'e9dia (aritm\'e9tica).\par
+\b0\fs22 ___________________________________________________________________________\par
+#include <stdio.h>\par
+int main()\{\par
+char nome [15];\par
+int n1,n2,n3,media;\par
+\par
+printf("Informe o nome do aluno:\\n");\par
+scanf("%s", &*nome);\par
+printf("Informe a primeira nota.\\n");\par
+scanf("%d", &n1);\par
+printf("Informe a segunda nota.\\n");\par
+scanf("%d", &n2);\par
+printf("Informe a terceira nota.\\n");\par
+scanf("%d", &n3);\par
+\par
+media = n1 + n2 +n3;\par
+\par
+printf("A m\'e9dia do aluno(a) %s \'e9 %d",nome, media/3);\par
+return 0;\par
+\}\par
+\par
+\b\fs28 5.Ler dois valores inteiros para as vari\'e1veis A e B, e efetuar as trocas dos valores de forma que a vari\'e1vel A passe a possuir o valor da vari\'e1vel B e a vari\'e1vel B passe a possuir o valor da vari\'e1vel A. Apresentar os valores trocados.\cf1\par
+\cf0\b0\fs22 ___________________________________________________________________________\par
+#include <stdio.h>\par
+\par
+int main()\{\par
+int A, B, TRO;\par
+\par
+printf("Digite o valor de A\\n");\par
+scanf("%d", &A);\par
+printf("Digite o valor de B\\n");\par
+scanf("%d", &B);\par
+\par
+TRO = A;\par
+A = B;\par
+B = TRO;\par
+\par
+printf("O valor de A \'e9: %d\\n", A);\par
+printf("O valor de B \'e9: %d", B);\par
+\par
+return 0;\par
+\}\par
+\par
+\b\fs28 6. Ler uma temperatura em graus Celsius e apresent\'e1-la convertida em graus Fahrenheit. A f\'f3rmula de convers\'e3o \'e9: F=(9*C/5) + 32, sendo F a temperatura em Fahrenheit e C a temperatura em Celsius.\par
+\b0\fs22 ___________________________________________________________________________\par
+#include <stdio.h>\par
+\par
+int main()\{\par
+float C, F;\par
+\par
+printf("Insira a temperatura em graus celsius.\\t");\par
+scanf("%f", &C);\par
+\par
+F=(9*C/5) + 32;\par
+\par
+printf("O valor inserido em Fahrenheit \'e9: %f \\t", F);\par
+\}\par
+\b\fs28\par
+7. Fa\'e7a um algoritmo que receba um valor que foi depositado e exiba o valor com rendimento ap\'f3s um m\'eas. Considere fixo o juro da poupan\'e7a em 0,70% a. m\par
+\b0\fs22 ___________________________________________________________________________\par
+#include <stdio.h>\par
+\par
+int main()\{\par
+float sal, rend;\par
+\par
+printf("Digite o valor do sal\'e1rio.\\n");\par
+scanf("%f", &sal);\par
+\par
+rend = (sal * 0.007) + sal;\par
+\par
+printf("O rendimento no pr\'f3ximo m\'eas ser\'e1 de R$%.2f.",rend);\par
+\par
+return 0;\par
+\}\par
+\par
+\b\fs28 8. A Loja Mam\'e3o com A\'e7\'facar est\'e1 vendendo seus produtos em 5(cinco)\par
+presta\'e7\'f5es sem juros. Fa\'e7a um algoritmo que receba um valor de uma\par
+compra e mostre o valor das presta\'e7\'f5es.\par
+\b0\fs22 ___________________________________________________________________________\fs28\par
+\fs22 #include <stdio.h>\par
+\par
+int main()\{\par
+float val, prest;\par
+\par
+printf("Digite o valor da compra.\\n");\par
+scanf("%f", &val);\par
+\par
+prest = val / 5;\par
+\par
+printf("Cada presta\'e7\'e3o ir\'e1 sair por R$ %.2f.", prest);\par
+return 0;\par
+\}\b\par
+\b0\par
+\b\fs28 9. Fa\'e7a um algoritmo que receba o pre\'e7o de custo de um produto e mostre o valor de venda. Sabe-se que o pre\'e7o de custo receber\'e1 um acr\'e9scimo de acordo com um percentual informado pelo usu\'e1rio.\par
+\b0\fs22 ___________________________________________________________________________\fs28\par
+\fs22 #include <stdio.h>\par
+\par
+int main()\{\par
+float pre, prev, por;\par
+\par
+\cf2 printf\cf0 ("Informe o valor do produto.\\n");\par
+scanf("%f", &pre);\par
+printf("Informe o percentual de lucro.\\n");\par
+scanf("%f", &por);\par
+\par
+prev = (por * pre) + pre;\par
+\par
+printf("O valor de venda ser\'e1 de R$%.2f", prev);\par
+\par
+\par
+return 0;\par
+\}\par
+\par
+\b\fs28 10.Fa\'e7a um algoritmo que receba um n\'famero e mostre uma mensagem caso este n\'famero seja maior que 10.\par
+\b0\fs22 ___________________________________________________________________________\fs28\par
+\fs22 #include <stdio.h>\par
+\par
+int main(void) \{\par
+    int num;\par
+  printf("\\nDigite um numero.\\n");\par
+  scanf("%i", &num);\par
+  if (num > 9)\par
+  \{\par
+    if (num == 10)\par
+    \{\par
+      printf("Este numero e o 10");\par
+    \}\par
+    else\par
+    \{\par
+      printf("\\nEste numero e maior que 10.\\n");\par
+    \}\par
+  \}\par
+  else\{\par
+    printf("\\nEste numero e menor que 10.\\n");\par
+    \} \par
+  return 0;\par
+\}\par
+\b\fs28 11.Escrever um algoritmo que leia dois valores inteiro distintos e informe qual \'e9 o maior.\par
+\b0\fs22 ___________________________________________________________________________\par
+#include <stdio.h>\par
+\par
+int main(void) \{\par
+    int num1, num2;\par
+  printf("\\nDigite o primeiro numero.\\n");\par
+  scanf("%i", &num1);\par
+\par
+    printf("\\nDigite o segundo numero.\\n");\par
+  scanf("%i", &num2);\par
+  \par
+  if(num1 == num2)\{\par
+    printf("Os numeros sao iguais.");\par
+  \}\par
+  else\{\par
+    if(num1 > num2)\{\par
+      printf("O numero %i \'e9 maior que o numero %i",num1 , num2);\par
+    \}\par
+    else\{\par
+      printf("O numero %i \'e9 maior que o numero %i",num2 , num1);\par
+    \}\par
+  \}\par
+  return 0;\par
+\}\par
+\b\fs28 12.Fa\'e7a um algoritmo que receba um n\'famero e diga se este n\'famero est\'e1 no intervalo entre 100 e 200.\par
+\b0\fs22 ___________________________________________________________________________\par
+#include <stdio.h>\par
+\par
+int main(void) \{\par
+    int num;\par
+  printf("\\nDigite um numero.\\n");\par
+  scanf("%i", &num);\par
+\par
+  if(num >= 100 && num <= 200)\{\par
+    printf("O numero %i se encontra no intervelo.", num);\par
+  \}\par
+  else\{\par
+    printf("O numero %i n\'e3o se encontra no intervelo.", num);\par
+  \}\par
+  return 0;\par
+\}\par
+\b\fs28 13.Pedro comprou um saco de ra\'e7\'e3o com peso em quilos. Ele possui dois gatos,para os quais fornece a quantidade de ra\'e7\'e3o em gramas. A quantidade di\'e1ria de ra\'e7\'e3o fornecida para cada \'e9 sempre a mesma. Fa\'e7a um algoritmo que receba o peso do saco de ra\'e7\'e3o e a quantidade de ra\'e7\'e3o fornecida para cada\par
+gato, calcule e mostre quanto restar\'e1 de ra\'e7\'e3o ao final de cinco dias.\par
+\b0\fs22 ___________________________________________________________________________\par
+#include <stdio.h>\par
+\par
+int main(void) \{\par
+  float Rkg, Rg, Rr;\par
+  int ddr;\par
+\par
+  printf("Digite quantos quilos de racao serao usados.\\n");\par
+  scanf("%f", &Rkg);\par
+  printf("Digite quantas gramas cada gato come por dia.\\n");\par
+  scanf("%f", &Rg);\par
+\par
+  ddr = (Rkg / 100)/ 2*Rg;\par
+  Rr = ((ddr - 5) * Rg)/ 100;\par
+\par
+  printf("Ao final dos 5 dias irao restar %.2fkg de racao", Rr);\par
+  return 0;\par
+\}\par
+\b\fs28 14.Escreva um programa que leia um valor em real e permita que o usu\'e1rio informe a op\'e7\'e3o para convers\'e3o: \par
+1 \f1\endash  d\f0\'f3lar e 2 \f1\endash  Euro.\par
+\par
+Cota\f0\'e7\'e3o:\par
+D\'f3lar = 3,05\par
+Euro = 3,31\par
+\b0\fs22 ___________________________________________________________________________\par
+#include <stdio.h>\par
+\par
+int main(void) \{\par
+  float Rea, Dol, Eu;\par
+  int Ops;\par
+\par
+  printf("Digite o valor que quer converter em reais.\\n");\par
+  scanf("%f", &Rea);\par
+  printf("Deseja ver a convers\'e3o em:\\nEuro -1\\nDol -2\\n");\par
+  scanf("%i", &Ops);\par
+\par
+  switch (Ops)\par
+  \{\par
+  case 1:\par
+    Eu = Rea/ 3.31;\par
+    printf("%.2f Euros.", Eu);\par
+    break;\par
+  case 2:\par
+    Dol = Rea/ 3.05;\par
+    printf("$ %.2f Dolar.", Dol);\par
+    break;\par
+  \par
+  default:\par
+  printf("Escolha uma opcao valida.");\par
+    break;\par
+  \}\par
+  return 0;\par
+\}\b\par
+\par
+}
+ 

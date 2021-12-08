@@ -39,6 +39,5 @@ int main()
         printf("Quantidade produto %d: %d\n", indice + 1, num_produto_linha[indice]);
         printf("Preco total: R$%.2f\n",preco[indice] * num_produto_linha[indice]);
     }
-
     return 0;
 }
